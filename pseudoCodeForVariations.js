@@ -20,6 +20,12 @@ const addVariation = async (msg_doc, variation) =>{
             }
             arr[i].variation[type] = value;
         }
+        if(!msg_doc.variations){
+            msg_doc.variations = []
+        }
+        if(!msg_doc.variationList){
+            msg_doc.variationList = []
+        }
         msg_doc.variations.push(...arr);
         msg_doc.variationList.push(variation);
         console.log("this is final msg doc ->######\n",JSON.stringify(msg_doc, null, 4));
